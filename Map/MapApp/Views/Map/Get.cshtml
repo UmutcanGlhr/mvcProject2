@@ -1,0 +1,106 @@
+@model Map
+<div class="grid-wrapper">
+
+    <div class="center">
+
+        <div class="article-card">
+           <a asp-action="info" asp-route-id="@Model.id"> <div class="content">
+                <p class="date">Eskişehir @Model.id </p>
+                <p class="title">Havacılık Müzesi</p>
+            </div></a>
+             <img
+                    src="https://www.tepebasi.bel.tr/haberler/resimler/1(57).jpg" alt="article-cover" />
+        </div>
+
+    </div>
+
+    <div class="center">
+        <a asp-action="info" asp-route-id="@Model.id">
+            <div class="article-card">
+                <div class="content">
+                    <p class="date">Eskişehir @Model.id </p>
+                    <p class="title">Kurtuluş Müzesi</p>
+                </div>
+                <img src="https://i.ytimg.com/vi/SeWizEvi_XU/maxresdefault.jpg" alt="article-cover" />
+            </div>
+        </a>
+    </div>
+    <div class="center">
+        <a asp-action="info" asp-route-id="@Model.id">
+            <div class="article-card">
+                <div class="content">
+                    <p class="date">Eskişehir @Model.id </p>
+                    <p class="title">Yazılıkaya</p>
+                </div>
+                <img src="https://www.rotasenin.com/wp-content/uploads/2018/08/midas-antik-kenti-yazilikaya-aniti.jpg"
+                    alt="article-cover" />
+            </div>
+        </a>
+    </div>
+</div>
+<style>
+    .grid-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3 minmax(100px, 200px));
+        grid-gap: 10px;
+        grid-auto-flow: dense;
+        margin-top: 10px;
+    }
+
+    .center {
+        display: flex;
+        height: 50vh;
+        justify-content: center;
+
+
+    }
+
+    .article-card {
+        width: 350px;
+        height: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 300ms;
+    }
+
+    .article-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .article-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .article-card .content {
+        box-sizing: border-box;
+        width: 100%;
+        position: absolute;
+        padding: 30px 20px 20px 20px;
+        height: auto;
+        bottom: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    }
+
+    .article-card .date,
+    .article-card .title {
+        margin: 0;
+    }
+
+    .article-card .date {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 4px;
+    }
+
+    .article-card .title {
+        font-size: 17px;
+        color: #fff;
+    }
+</style>

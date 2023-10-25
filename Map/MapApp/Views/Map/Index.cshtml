@@ -1,0 +1,17 @@
+@model List<Map>
+
+
+<div class="map-of-regions">
+  <?xml version="1.0"?>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1304.8878967805654"
+    height="50vh" viewBox="-5 -5 1314.8878967805654 610" id="regions">
+    @foreach (Map prd in Model)
+    {
+      <a asp-action="Get" asp-route-id="@prd.id">
+        <path style="float:left;" class="region" data-state="@prd.id" d="@prd.mapSvg" id="@prd.id"></path>
+      </a>
+    }
+  </svg>
+</div>
+
+
